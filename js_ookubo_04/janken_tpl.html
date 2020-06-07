@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css" />
+    <title>じゃんけん</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+      <ul>
+        <li id="gu_btn">グー</li>
+        <li id="cho_btn">チョキ</li>
+        <li id="par_btn">パー</li>
+      </ul>
+      <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+      <div id="judgment">勝ち</div>
+    </main>
+
+    <footer></footer>
+    <script>
+      // グー
+      // ボタン
+      $("#gu_btn").on("click", function () {
+        // 乱数挿入
+        const aaa = Math.ceil(Math.random() * 3);
+        // if分岐処理（コンピュータ）
+        let view1 = "";
+        if (aaa == 1) {
+          view1 = "グー";
+        }
+        if (aaa == 2) {
+          view1 = "チョキ";
+        }
+        if (aaa == 3) {
+          view1 = "パー";
+        }
+        // 表示処理（コンピュータ）
+        $("#pc_hands").html(view1);
+
+        // if分岐処理（判定）
+        let view2 = "";
+        if (view1 == "グー") {
+          view2 = "合いこ";
+        }
+        if (view1 == "チョキ") {
+          view2 = "勝ち";
+        }
+        if (view1 == "パー") {
+          view2 = "負け";
+        }
+        // 表示処理（判定）
+        $("#judgment").html(view2);
+      });
+
+      // チョキ
+      // ボタン
+      $("#cho_btn").on("click", function () {
+        // 乱数挿入
+        const bbb = Math.ceil(Math.random() * 3);
+        // if分岐処理（コンピュータ）
+        let view3 = "";
+        if (bbb == 1) {
+          view3 = "グー";
+        }
+        if (bbb == 2) {
+          view3 = "チョキ";
+        }
+        if (bbb == 3) {
+          view3 = "パー";
+        }
+        // 表示処理（コンピュータ）
+        $("#pc_hands").html(view3);
+
+        // if分岐処理（判定）
+        let view4 = "";
+        if (view3 == "グー") {
+          view4 = "負け";
+        }
+        if (view3 == "チョキ") {
+          view4 = "合いこ";
+        }
+        if (view3 == "パー") {
+          view4 = "勝ち";
+        }
+        // 表示処理（判定）
+        $("#judgment").html(view4);
+      });
+
+      // パー
+      // ボタン
+      $("#par_btn").on("click", function () {
+        // 乱数挿入
+        const ccc = Math.ceil(Math.random() * 3);
+        // if分岐処理（コンピュータ）
+        let view5 = "";
+        if (ccc == 1) {
+          view5 = "グー";
+        }
+        if (ccc == 2) {
+          view5 = "チョキ";
+        }
+        if (ccc == 3) {
+          view5 = "パー";
+        }
+        // 表示処理（コンピュータ）
+        $("#pc_hands").html(view5);
+
+        // if分岐処理（判定）
+        let view6 = "";
+        if (view5 == "グー") {
+          view6 = "勝ち";
+        }
+        if (view5 == "チョキ") {
+          view6 = "負け";
+        }
+        if (view5 == "パー") {
+          view6 = "合いこ";
+        }
+        // 表示処理（判定）
+        $("#judgment").html(view6);
+      });
+    </script>
+  </body>
+</html>
